@@ -3,8 +3,12 @@
     <head>
         <title>Home Page</title>
         <style>
+            @font-face{
+                font-family:"myriadpro";
+                src: url("./fonts/myriadpro-light.woff") format("woff"), url("./fonts/myriadpro-bold.woff") format("woff");
+            }
             body{
-                background-color:wheat;
+                background-color:antiquewhite;
             }
             h1, h2{
                 font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -15,8 +19,9 @@
                 color:saddlebrown;
             }
             ul{
-                font-family:cursive;
+                font-family:myriadpro;
                 list-style-position:inside;
+                color:black;
             }
             li{
                 margin:10px;
@@ -32,16 +37,16 @@
                 border-radius:5px;
             }
             #div1, #div2{
-                background-color:rgba(255, 255, 0, 0.562);
+                background-color:white;
             }
             #div3, #div4{
-                background-color:lightcyan;
+                background-color:white;
             }
             #div5, #div6, #div7{
-                background-color:palegreen;
+                background-color:white;
             }
             div:hover{
-                background-color:skyblue;
+                background-color:white;
                 border:dashed;
                 border-width:5px;
                 border-radius:5px;
@@ -54,19 +59,19 @@
         <img src = "images\turtlenobg.png" alt = "a picture of me" width = "460" height = "360">
         <h2>A list of courses I am currently taking:</h2>
         <ul>
-            <div id="div1" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193044279"><li>ACIT 1420<br>This course introduces students to the configuration, maintenance, and administration of a Windows laptop computer. (more)</li></a></div>
+            <div id="div1" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193044279"><li><b>ACIT 1420</b><br>This course introduces students to the configuration, maintenance, and administration of a Windows laptop computer. (more)</li></a></div>
 
-            <div id="div2" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034319"><li>ACIT 1515<br>The course introduces the fundamental concepts of programming for IT professionals, with a focus on scripting languages that are commonly found in the workplace. (more)</li></a></div>
+            <div id="div2" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034319"><li><b>ACIT 1515</b><br>The course introduces the fundamental concepts of programming for IT professionals, with a focus on scripting languages that are commonly found in the workplace. (more)</li></a></div>
 
-            <div id="div3" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034322"><li>ACIT 1620<br>This course introduces the fundamental principles and techniques for designing and developing effective Web sites. (more)</li></a></div>
+            <div id="div3" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034322"><li><b>ACIT 1620</b><br>This course introduces the fundamental principles and techniques for designing and developing effective Web sites. (more)</li></a></div>
 
-            <div id="div4" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034355"><li>ACIT 1630<br>This course covers relational database technology, including basic concepts, relational algebra, enhanced entity-relationship data modeling, functional dependencies and normalization, design methodology, SQL query language (DDL and DML), views, security and transaction management. (more)</li></a></div>
+            <div id="div4" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034355"><li><b>ACIT 1630</b><br>This course covers relational database technology, including basic concepts, relational algebra, enhanced entity-relationship data modeling, functional dependencies and normalization, design methodology, SQL query language (DDL and DML), views, security and transaction management. (more)</li></a></div>
 
-            <div id="div5" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034328"><li>COMM 1116<br>This course will teach you how to be a professional and efficient communicator at work. You will write effective business correspondence and instructions and deliver a formal oral presentation to your set. (more)</li></a></div>
+            <div id="div5" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034328"><li><b>COMM 1116</b><br>This course will teach you how to be a professional and efficient communicator at work. You will write effective business correspondence and instructions and deliver a formal oral presentation to your set. (more)</li></a></div>
 
-            <div id="div6" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193041874"><li>MATH 1310<br>This course introduces students to the core mathematical constructs that underlie information technology. (more)</li></a></div>
+            <div id="div6" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193041874"><li><b>MATH 1310</b><br>This course introduces students to the core mathematical constructs that underlie information technology. (more)</li></a></div>
 
-            <div id="div7" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20191084974"><li>ORGB 1100<br>The course will focus on macro factors such as organizational structure, technology and environment; group factors such as group dynamics, leadership, conflict, change and decision making; and micro or individual factors such as personality, attitudes, perception and motivation. (more)</li></a></div>
+            <div id="div7" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20191084974"><li><b>ORGB 1100</b><br>The course will focus on macro factors such as organizational structure, technology and environment; group factors such as group dynamics, leadership, conflict, change and decision making; and micro or individual factors such as personality, attitudes, perception and motivation. (more)</li></a></div>
         </ul>
         <h3><a href = "resume.html">Resume Page</a></h3>
 
