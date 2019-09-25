@@ -2,23 +2,73 @@
 <html>
     <head>
         <title>Home Page</title>
+        <style>
+            body{
+                background-color:wheat;
+            }
+            h1, h2{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:brown;
+            }
+            p{
+                font-family:cursive;
+                color:saddlebrown;
+            }
+            ul{
+                font-family:cursive;
+                list-style-position:inside;
+            }
+            li{
+                margin:10px;
+            }
+            h3{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+            a{
+                text-decoration:none;
+            }
+            .courseDiv{
+                width:50%;
+                border-radius:5px;
+            }
+            #div1, #div2{
+                background-color:rgba(255, 255, 0, 0.562);
+            }
+            #div3, #div4{
+                background-color:lightcyan;
+            }
+            #div5, #div6, #div7{
+                background-color:palegreen;
+            }
+            div:hover{
+                background-color:skyblue;
+                border:dashed;
+                border-width:5px;
+                border-radius:5px;
+            }
+        </style>
     </head>
-    <body style = "background-color:wheat">
-        <h1 style = "font-family:Verdana, Geneva, Tahoma, sans-serif;color:brown">About ME</h1>
-        <p style = "font-family:cursive;color:saddlebrown">My name is Ebony Moore. I am a first year student in Computer Information Technology program at BCIT......</p>
+    <body>
+        <h1>About ME</h1>
+        <p>My name is Ebony Moore. I am a first year student in Computer Information Technology program at BCIT......</p>
         <img src = "images\turtlenobg.png" alt = "a picture of me" width = "460" height = "360">
-        <h2 style = "font-family:Verdana, Geneva, Tahoma, sans-serif;color:brown">A list of courses I am currently taking:</h2>
-        <ul style = "font-family:cursive">
-            <li><a href = "https://www.bcit.ca/study/outlines/20193044279">ACIT 1420</a></li>
-            <li><a href = "https://www.bcit.ca/study/outlines/20193034319">ACIT 1515</a></li>
-            <li><a href = "https://www.bcit.ca/study/outlines/20193034322">ACIT 1620</a></li>
-            <li><a href = "https://www.bcit.ca/study/outlines/20193034355">ACIT 1630</a></li>
-            <li><a href = "https://www.bcit.ca/study/outlines/20193034328">COMM 1116</a></li>
-            <li><a href = "https://www.bcit.ca/study/outlines/20193041874">MATH 1310</a></li>
-            <li><a href = "https://www.bcit.ca/study/outlines/20191084974">ORGB 1100</a></li>
-        </ul>
+        <h2>A list of courses I am currently taking:</h2>
+        <ul>
+            <div id="div1" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193044279"><li>ACIT 1420<br>This course introduces students to the configuration, maintenance, and administration of a Windows laptop computer. (more)</li></a></div>
 
-        <h3 style = "font-family:Verdana, Geneva, Tahoma, sans-serif"><a href = "resume.html">Resume Page</a></h3>
+            <div id="div2" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034319"><li>ACIT 1515<br>The course introduces the fundamental concepts of programming for IT professionals, with a focus on scripting languages that are commonly found in the workplace. (more)</li></a></div>
+
+            <div id="div3" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034322"><li>ACIT 1620<br>This course introduces the fundamental principles and techniques for designing and developing effective Web sites. (more)</li></a></div>
+
+            <div id="div4" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034355"><li>ACIT 1630<br>This course covers relational database technology, including basic concepts, relational algebra, enhanced entity-relationship data modeling, functional dependencies and normalization, design methodology, SQL query language (DDL and DML), views, security and transaction management. (more)</li></a></div>
+
+            <div id="div5" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193034328"><li>COMM 1116<br>This course will teach you how to be a professional and efficient communicator at work. You will write effective business correspondence and instructions and deliver a formal oral presentation to your set. (more)</li></a></div>
+
+            <div id="div6" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20193041874"><li>MATH 1310<br>This course introduces students to the core mathematical constructs that underlie information technology. (more)</li></a></div>
+
+            <div id="div7" class="courseDiv"><a href = "https://www.bcit.ca/study/outlines/20191084974"><li>ORGB 1100<br>The course will focus on macro factors such as organizational structure, technology and environment; group factors such as group dynamics, leadership, conflict, change and decision making; and micro or individual factors such as personality, attitudes, perception and motivation. (more)</li></a></div>
+        </ul>
+        <h3><a href = "resume.html">Resume Page</a></h3>
 
         <a href = "files\resume.pdf">Download my resume in PDF</a>
 
