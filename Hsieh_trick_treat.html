@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trick or Treat</title>
+        <style>
+        body{
+                background-color:antiquewhite;
+            }
+        </style>
+    </head>
+    <body>
+        <p style="text-align: center;font-size:50px;" id="changeColor">
+            Welcome to BCIT COMP1536
+        </p>
+        <div style="text-align:center;">
+            <button style="height:50px;width:200px;" onclick="orange()" type="button">orange</button>
+            <button style="height:50px;width:200px;" onclick="grey()" type="button">grey</button>
+            <button style="height:50px;width:200px;" onclick="cyan()" type="button">cyan</button>
+        </div>
+        <br>
+        <br>
+        <div style="text-align:center;">
+            <img height="300" width="200px" onclick="candy()" src="images/door.png">
+            <img height="300" width="200px" onclick="ghost1()" src="images/door.png">
+            <img height="300" width="200px" onclick="ghost2()" src="images/door.png">
+        </div>
+        <div style="text-align:center;">
+            <img height="150" width="125" id="image" />
+        </div>
+        <script>
+            function orange(){
+                document.getElementById("changeColor").style.color="orange";
+            }
+            function grey(){
+                document.getElementById("changeColor").style.color="grey";
+            }
+            function cyan(){
+                document.getElementById("changeColor").style.color="cyan";
+            }
+            function candy(){
+                document.getElementById("image").src="./images/candy.png";
+            }
+            function ghost1(){
+                document.getElementById("image").src="./images/ghost1.png";
+            }
+            function ghost2(){
+                document.getElementById("image").src="./images/ghost2.png";
+            }
+        </script>
+    </body>
+</html>
