@@ -2,53 +2,7 @@
 <html>
     <head>
         <title>Zombie</title>
-        <style>
-            @font-face{
-                font-family:"fofbb";
-                src: url("./fonts/fofbb_ital.woff") format("woff");
-            }
-            html {
-                width: 100%;
-                height: 100%;
-            }
-            #scoreboard{
-                text-align:center;
-                position: fixed;
-                width:500px;
-                top: 10%;
-                left: 50%;
-                margin-top: -100px;
-                margin-left: -250px;
-                color:red;
-                font-family: fofbb;
-                font-size:50px;
-            }
-            #end{
-                position: fixed;
-                bottom: 10%;
-                left: 50%;
-                margin-bottom: -50px;
-                margin-left: -100px;
-            }
-            #back{
-                background-image: url("./images/background.jpg");
-                background-size: cover;
-            }
-            #endbutton{
-                background-color:darkorchid;
-                color:greenyellow;
-                border-radius: 12px;
-                font-size: 40px;
-                font-family: fofbb;
-                padding: 30px 60px;
-            }
-            #endbutton:hover{
-                background-color:maroon;
-            }
-            #game{
-                width:128px;
-            }
-        </style>
+        <link href="zombieCSS.css" rel="stylesheet" type="text/css">
     </head>
     <body id="back">
         <div id="scoreboard">
