@@ -20,52 +20,61 @@
         </div>
 
         <script>
-            let score = 0;
+            let gscore = 0;
             let w = 0;
             let h = 0;
             let spawnZombie;
             let clearZombie;
             let explodeZombie;
+            let startGame = document.getElementById("start");
+            let zombie = document.getElementById("zombie");
+            let explosion = document.getElementById("explosion");
+            let score = document.getElementById("score");
 
-            document.getElementById("start").src="./images/zombie.png";
+            startGame.src="./images/zombie.png";
 
+            // Start the game by first hide the original zombie and set the game score to 0
             function begin(){
-                document.getElementById("start").style.display = "none";
-                score = 0;
+                startGame.style.display = "none";
+                gscore = 0;
                 ingame();
             }
 
+            // Spawns zombie and display score
             function ingame(){
-                if(score === -1){
+                if(gscore === -1){
                     return;
                 }
                 spawnZombie = setTimeout(function(){next()}, 2000);
-                document.getElementById("score").innerHTML = "Score: " + score;
+                score.innerHTML = "Score: " + gscore;
             }
 
+            // Remove the zombie and plays audio and explosion gif, increament the score by 1
             function die(){
-                if(score === -1){
+                if(gscore === -1){
                     return;
                 }
                 removeZombie();
                 bombAudio();
                 zombieAudio();
                 explode(w, h);
-                score++;
+                gscore++;
             }
 
+            // Remove the zombie without effects if the zombie was not clicked by the player within 2 seconds
             function gone(){
-                if(score === -1){
+                if(gscore === -1){
                     return;
                 }
-                if(window.getComputedStyle(document.getElementById("zombie")).display === "block"){
+                if(window.getComputedStyle(zombie).display === "block"){
                     removeZombie();
                 }
                 ingame();
             }
 
+            // Randomly spawn a zombie, and removes it within 2 seconds
             function next(){
-                if(score === -1){
+                if(gscore === -1){
                     return;
                 }
 
@@ -79,47 +88,53 @@
                     h = (window.innerHeight * 0.7) * Math.random();
                 }
 
-                document.getElementById("zombie").style.display = "block";
-                document.getElementById("zombie").src="./images/zombie.png";
-                document.getElementById("zombie").style.marginLeft = w + "px";
-                document.getElementById("zombie").style.marginTop = h + "px";
+                zombie.style.display = "block";
+                zombie.src="./images/zombie.png";
+                zombie.style.marginLeft = w + "px";
+                zombie.style.marginTop = h + "px";
                 clearZombie = setTimeout(function(){gone()}, 2000);
             }
 
+            // Display explosion gif on same position as the zombie
             function explode(width, height){
-                if(score === -1){
+                if(gscore === -1){
                     return;
                 }
-                document.getElementById("explosion").style.display = "block";
-                document.getElementById("explosion").src="./images/explosion.gif";
-                document.getElementById("explosion").style.marginLeft = width + "px";
-                document.getElementById("explosion").style.marginTop = height + "px";
+                explosion.style.display = "block";
+                explosion.src="./images/explosion.gif";
+                explosion.style.marginLeft = width + "px";
+                explosion.style.marginTop = height + "px";
                 explodeZombie = setTimeout(removeExplosion, 400);
             }
 
+            // Removes explosion
             function removeExplosion(){
-                document.getElementById("explosion").style.display = "none";
+                explosion.style.display = "none";
             }
 
+            // Removes zombie
             function removeZombie(){
-                document.getElementById("zombie").style.display = "none";
+                zombie.style.display = "none";
             }
 
+            // Set the game score to -1, so other functions know not to execute, removes everything, and clear any timeout, and display the original zombie
             function end(){
-                score = -1;
+                gscore = -1;
                 removeZombie();
                 removeExplosion();
                 clearTimeout(spawnZombie);
                 clearTimeout(clearZombie);
                 clearTimeout(explodeZombie);
-                document.getElementById("start").style.display = "block";
+                startGame.style.display = "block";
             }
 
+            // Plays zombie sound effect
             function zombieAudio(){
                 let audio = new Audio("./audio/pain.mp3");
                 audio.play();
             }
 
+            // Plays bomb sound effect
             function bombAudio(){
                 let audio = new Audio("./audio/bomb.mp3");
                 audio.play();
