@@ -1,6 +1,6 @@
 @font-face{
     font-family:"fofbb";
-    src: url("./fonts/fofbb_ital.woff") format("woff");
+    src: url("../fonts/fofbb_ital.woff") format("woff");
 }
 html {
     width: 100%;
@@ -18,6 +18,13 @@ html {
     font-family: fofbb;
     font-size:50px;
 }
+#start{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -64px;
+    margin-left: -64px;
+}
 #end{
     position: fixed;
     bottom: 10%;
@@ -26,7 +33,7 @@ html {
     margin-left: -100px;
 }
 #back{
-    background-image: url("./images/background.jpg");
+    background-image: url("../images/background.jpg");
     background-size: cover;
 }
 #endbutton{
