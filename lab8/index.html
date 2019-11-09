@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab8</title>
+    <style>
+        div{
+            width:15px;
+            height:auto;
+            display:inline-block;
+        }
+        button{
+            font-size:15px;
+            width:50px;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // part a
+        let buttonNum = parseInt(prompt("Enter number of buttons"));
+        if (buttonNum >= 0 && buttonNum <= 26){
+            generateButtons(buttonNum);
+        } else{
+            window.alert("Number should be between 0 and 26");
+        }
+
+        function generateButtons(num){
+            for(let i = 0; i < num; i++){
+                let btn = document.createElement("BUTTON");
+                let space = document.createElement("div");
+                document.body.appendChild(btn);
+                document.body.appendChild(space);
+                btn.innerHTML = String.fromCharCode(i + 65);
+                btn.onclick = function(){console.log("Button " + String.fromCharCode(i + 65) + " was clicked")};
+            }
+        }
+
+        // part b
+        function Myrecipe(title, serves, incredients){
+            this.title = title;
+            this.serves = serves;
+            this.incredients = incredients;
+            this.print = function(){
+                document.write("<h1>");
+                document.write("Title: " + title + "<br>");
+                document.write("Serves: " + serves + "<br>");
+                document.write("Ingredients: " + "<br>");
+                for(let i = 0; i < incredients.length; i ++){
+                    document.write(incredients[i] + "<br>");
+                }
+            }
+        }
+        myObj = new Myrecipe ("Chicken Cacciatore", 2, ["cinnamon", "lettuce", "onion"] );
+        myObj.print();
+
+    </script>
+</body>
+</html>
