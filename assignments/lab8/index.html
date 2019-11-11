@@ -39,17 +39,20 @@
         }
 
         // part b
-        function Myrecipe(title, serves, incredients){
+        function Myrecipe(title, serves, ingredients){
             this.title = title;
             this.serves = serves;
-            this.incredients = incredients;
+            this.ingredients = [];
+            for(let i = 0; i < ingredients.length; i++){
+                this.ingredients.push(ingredients[i]);
+            }
             this.print = function(){
                 document.write("<h1>");
-                document.write("Title: " + title + "<br>");
-                document.write("Serves: " + serves + "<br>");
+                document.write("Title: " + this.title + "<br>");
+                document.write("Serves: " + this.serves + "<br>");
                 document.write("Ingredients: " + "<br>");
-                for(let i = 0; i < incredients.length; i ++){
-                    document.write(incredients[i] + "<br>");
+                for(let i = 0; i < this.ingredients.length; i ++){
+                    document.write(this.ingredients[i] + "<br>");
                 }
             }
         }
