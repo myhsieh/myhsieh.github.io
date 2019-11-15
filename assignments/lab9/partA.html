@@ -1,10 +1,12 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>partA</title>
 </head>
+
 <body>
     <p id="txt"></p>
     <input id="input" type="text">
@@ -12,44 +14,48 @@
     <p id="ans"></p>
     <script>
         document.getElementById("txt").innerHTML = "How many buttons to create?";
-        document.getElementById("check").onclick=check;
+        document.getElementById("check").onclick = check;
         let w = window.innerWidth;
         let h = window.innerHeight;
-        function check(){
-            function buttonObject(){
+        function check() {
+            function buttonObject() {
                 this.height = 5;
                 this.width = 10;
                 this.red = parseInt(Math.random() * 255);
                 this.green = parseInt(Math.random() * 255);
                 this.blue = parseInt(Math.random() * 255);
                 this.rgb = "" + this.red + ", " + this.green + ", " + this.blue;
-                this.generateTop = function(){
+                this.generateTop = function () {
                     return (h * 0.8) * Math.random();
                 }
-                this.generateLeft = function(){
+                this.generateLeft = function () {
                     return (w * 0.8) * Math.random();
                 }
             }
             let val = parseInt(document.getElementById("input").value);
-            if(isNaN(val)){
+            if (isNaN(val)) {
                 document.getElementById("ans").innerHTML = "Error! It's not a number!";
-            } else if(val >= 5 && val <= 100){
-                for(let i = 0; i < val; i++){
+            } else if (val >= 5 && val <= 100) {
+                for (let i = 0; i < val; i++) {
                     button = new buttonObject();
                     let btn = document.createElement("BUTTON");
                     btn.style.backgroundColor = "rgb(" + button.rgb + ")";
                     btn.style.height = button.height + "em";
                     btn.style.width = button.width + "em";
                     btn.style.position = "absolute";
-                    setInterval(function(){ btn.style.top = button.generateTop(); btn.style.left = button.generateLeft(); }, 2000);
+                    setInterval(
+                        function () {
+                            btn.style.top = button.generateTop();
+                            btn.style.left = button.generateLeft();
+                        }, 2000);
                     document.body.appendChild(btn);
-                    
                 }
-            } else{
+            } else {
                 document.getElementById("ans").innerHTML = "The number should be between 5 and 100.";
             }
-            
+
         }
     </script>
 </body>
+
 </html>
