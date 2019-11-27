@@ -5,13 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman</title>
+    <style>
+        div {
+            text-align: center;
+        }
+
+        /*desktop*/
+        @media only screen and (min-width: 900px) {
+            #restart {
+                width: 200px;
+                height: 50px;
+                font-size: 40px;
+            }
+
+            #lineDiv {
+                font-size: 300%;
+            }
+
+            #buttonsDiv {
+                margin: auto;
+                width: 50%;
+                height: 50%;
+            }
+        }
+
+        /*tablet*/
+        @media only screen and (max-width: 900px) and (min-width: 500px) {
+            #restart {
+                width: 100px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            #lineDiv {
+                font-size: 200%;
+            }
+
+            #buttonsDiv {
+                margin: auto;
+                width: 70%;
+                height: 60%;
+            }
+        }
+
+        /*mobile*/
+        @media only screen and (max-width:500px) {
+            #restart {
+                width: 80px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            #lineDiv {
+                font-size: 150%;
+            }
+
+            #buttonsDiv {
+                margin: auto;
+                width: 70%;
+                height: 70%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1 id='line'></h1>
-    <h1 id='life'></h1>
-    <h1 id='gameOver'></h1>
-    <button type='button' id='restart'>Restart</button>
+    <div id="titleDiv">
+        <h1>Hangman</h1>
+    </div>
+    <div id="lifeDiv">
+        <h1 id="life"></h1>
+    </div>
+    <div id="lineDiv">
+        <h1 id="line"></h1>
+    </div>
+    <div id="gameMessage">
+        <h1 id="gameOver"></h1>
+    </div>
+    <div id="buttonsDiv">
+    </div>
+    <div id="restartDiv">
+        <button type='button' id='restart'>Restart</button>
+    </div>
     <script>
         let buttons = [];
         let answerArr = [];
@@ -19,7 +94,6 @@
         let stop = false;
         let wordbank = ['LEARNED', 'SENSE', 'SLIM', 'UTTER', 'LOCK', 'NOTICE', 'ZONKED', 'AWAKE', 'FRETFUL', 'CAUSE', 'COVER', 'POOR', 'PERMIT', 'DANGEROUS', 'FURRY', 'PICKLE', 'ERROR', 'ORDER', 'DAM', 'TEMPER', 'PLAY', 'SISTER', 'NUMBER', 'COMFORTABLE', 'ANTS', 'ARROGANT', 'EXCITE', 'AMUSING', 'BACK', 'RIPE', 'SUGGESTION', 'SEPARATE', 'INFLUENCE', 'STEADY', 'AVERAGE', 'ORANGES', 'LONGING', 'CRIME', 'NORTH', 'RUDDY', 'SPARK', 'INCONCLUSIVE', 'VICTORIOUS', 'JUGGLE', 'SHUT', 'ONEROUS', 'HANDSOME', 'JOIN', 'TAX', 'GUIDE', 'CABBAGE', 'DRIVING', 'DISLIKE', 'CAST', 'NOISELESS', 'DRUNK', 'VULGAR', 'TEST', 'BLOOD', 'SPIDERS', 'YARN', 'CRACKER', 'SLEEPY', 'HUM', 'PLANT', 'SLOW', 'JUICE', 'STROKE', 'UNUSUAL', 'COMPETITION', 'CLIP', 'BEE', 'DRAG', 'PURPLE', 'DEPRESSED', 'INTEND', 'CONNECT', 'FLAG', 'TYPICAL', 'MATERIALISTIC', 'GROTESQUE', 'BRIGHT', 'WHEEL', 'SNOTTY', 'RIVER', 'PRINT', 'BREEZY', 'INVENTION', 'EXUBERANT', 'LETTER', 'SILENT', 'EXCLUSIVE', 'BEFITTING', 'BOARD', 'BITTER', 'INTERRUPT', 'DEAFENING', 'REPLACE', 'PRICE', 'PROGRAM'];
         let word = generateWord(wordbank);
-        //let word = "RABBITS";
 
         startGame();
 
@@ -32,7 +106,7 @@
             answerArr = [];
             life = 7;
             stop = false;
-            document.getElementById('gameOver').innerHTML = '';
+            document.getElementById("gameOver").innerHTML = '';
             word = generateWord(wordbank);
             generateUnderlines(word);
             printGame();
@@ -61,7 +135,7 @@
                 checkWord(id);
                 this.disabled = true;
             };
-            document.body.appendChild(this.btn);
+            document.getElementById("buttonsDiv").appendChild(this.btn);
         }
 
         function checkWord(i) {
@@ -87,7 +161,7 @@
                 if (!guessed) {
                     life--;
                 }
-                document.getElementById('life').innerHTML = life;
+                document.getElementById('life').innerHTML = "Current Life: " + life;
                 if (win) {
                     gameOver('w');
                 }
@@ -123,8 +197,8 @@
         }
 
         function printGame() {
-            document.getElementById('line').innerHTML = answerArr.join(' ');
-            document.getElementById('life').innerHTML = life;
+            document.getElementById("line").innerHTML = answerArr.join(' ');
+            document.getElementById("life").innerHTML = "Current Life: " + life;
         }
 
         function generateWord(wordList) {
