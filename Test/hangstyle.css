@@ -1,14 +1,14 @@
-
 div {
     text-align: center;
 }
 
+
 /*desktop*/
+
 @media only screen and (min-width: 900px) {
     #lineDiv {
         font-size: 300%;
     }
-
     #buttonsDiv {
         margin: auto;
         width: 50%;
@@ -16,12 +16,13 @@ div {
     }
 }
 
+
 /*tablet*/
+
 @media only screen and (max-width: 900px) and (min-width: 500px) {
     #lineDiv {
         font-size: 200%;
     }
-
     #buttonsDiv {
         margin: auto;
         width: 70%;
@@ -29,45 +30,38 @@ div {
     }
 }
 
+
 /*mobile*/
+
 @media only screen and (max-width:500px) {
     #lineDiv {
         font-size: 150%;
     }
-
     #buttonsDiv {
         margin: auto;
         width: 100%;
         height: 70%;
     }
+    body {
+        background-attachment: scroll;
+    }
 }
 
-
 body {
-    content: “”;
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    background: url("https://caruzip.github.io/images/colourful.jpg") no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-image: url('https://caruzip.github.io/images/colourful.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
-    }
-    
-    
+    background-position: center;
+}
 
 h1 {
     font-size: 35px;
     font-family: Trebuchet MS;
     color: white;
-    text-align: center; 
+    text-align: center;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
+
 #restart {
     background-color: rgb(70, 180, 200);
     border: 1px solid white;
@@ -82,6 +76,7 @@ h1 {
     right: 1%;
     top: 1%;
 }
+
 button {
     background-color: rgb(194, 243, 138);
     border: 1px solid white;
@@ -92,7 +87,3 @@ button {
     margin: 4px 2px;
     position: absolute;
 }
-
-
-
-
