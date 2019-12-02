@@ -32,10 +32,6 @@ function startGame() {
 function Button(id) {
     this.id = id;
     this.btn = document.createElement("button");
-    this.btn.style.width = "50px";
-    this.btn.style.height = "50px";
-    this.btn.style.margin = "10px";
-    this.btn.style.borderRadius = "12px";
     this.btn.innerHTML = "<font size='5'>" + String.fromCharCode(id + 65) + "</font>";
     this.btn.style.position = "static";
     this.reEnable = function () {
