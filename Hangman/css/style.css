@@ -46,6 +46,7 @@ div {
         width: 70%;
         height: 60%;
     }
+<<<<<<< HEAD
     button {
         width: 50px;
         height: 50px;
@@ -95,6 +96,10 @@ div {
         font-size: 18px;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
         position: relative;
+=======
+    body {
+        height: 100vh;
+>>>>>>> fd4c69fa1bcb5286c1531442814c9e08bb7ba6c3
     }
 }
 
@@ -194,6 +199,7 @@ div {
         width: 100%;
         height: 70%;
     }
+<<<<<<< HEAD
     button {
         width: 50px;
         height: 50px;
@@ -213,6 +219,10 @@ div {
         position: absolute;
         right: 1%;
         bottom: 1%;
+=======
+    body {
+        height: 100vh;
+>>>>>>> fd4c69fa1bcb5286c1531442814c9e08bb7ba6c3
     }
 }
 
