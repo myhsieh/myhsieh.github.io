@@ -48,7 +48,7 @@ div {
 }
 
 body {
-    background-image: url('https://caruzip.github.io/images/colourful.jpg');
+    background-image: url('../images/colourful.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
